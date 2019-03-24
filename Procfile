@@ -1,1 +1,1 @@
-
+worker: python ericabot.py
