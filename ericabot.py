@@ -49,5 +49,25 @@ async def on_message(message):
         embed.add_field(name="카페 주소", value="https://cafe.naver.com/ericas", inline=True)
         embed.set_thumbnail(url=message.author.avatar_url)
         await bot.send_message(message.channel, embed=embed)
+    if message.content.startswith("봇 "):
+        YES = "네,"
+        YES2 = "너"
+        YES3 = "<@"
+        YES4 = ">님이\""
+        YES5 = "\"라고 말하였습니다."
+        if message.content[-1] == "?":
+            if message.content[2] == "나":
+                embed = discord.Embed(title="수린:", description= YES + YES2+message.content[3:-1], color=0x383b38)
+                await bot.send_message(message.channel, embed=embed)
+            else:
+                embed = discord.Embed(title="수린:", description= YES + message.content[2:-1], color=0x383b38)
+                await bot.send_message(message.channel, embed=embed)
+        else:
+            if message.content[2]== "나":
+                embed = discord.Embed(title="수린:", description= YES + YES2+message.content[3:-1], color=0x383b38)
+                await bot.send_message(message.channel, embed=embed)
+            else:
+                embed = discord.Embed(title="수린:", description= YES+message.content[2:], color=0x383b38)
+                await bot.send_message(message.channel, embed=embed)
 access_token = os.environ["BOT_TOKEN"]
 bot.run(access_token)
